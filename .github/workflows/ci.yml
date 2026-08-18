@@ -1,0 +1,29 @@
+name: Public sample CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore tests/DiwyLearn.PublicSample.Tests.csproj
+
+      - name: Test
+        run: dotnet test tests/DiwyLearn.PublicSample.Tests.csproj --configuration Release --no-restore --verbosity normal
