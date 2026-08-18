@@ -1,0 +1,11 @@
+openapi: 3.1.0
+info:
+  title: DiwyLearn Public Contract
+  version: 1.0.0
+  description: Extracto ilustrativo; omite rutas productivas.
+paths:
+  /api/public/courses:
+    get:
+      summary: Lista cursos publicados
+      responses:
+        '200': { description: Resumen paginado }

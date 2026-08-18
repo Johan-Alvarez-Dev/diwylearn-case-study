@@ -1,0 +1,4 @@
+[
+  { "role": "Creator", "ownsCourse": true, "published": false, "action": "Edit", "expected": "Allow" },
+  { "role": "Student", "ownsCourse": false, "published": true, "action": "View", "expected": "Allow" }
+]
