@@ -1,74 +1,78 @@
-# DiwyLearn
+# DiwyLearn — Interactive Learning Platform
 
-### Creación de cursos y aprendizaje interactivo con una base preparada para crecer
+### Course authoring, active learning, and review workflows built with .NET and React
 
-[![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet)](https://dotnet.microsoft.com/) [![React 19](https://img.shields.io/badge/React-19-149ECA?logo=react)](https://react.dev/) [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-4169E1?logo=postgresql)](https://www.postgresql.org/) [![Core privado](https://img.shields.io/badge/core-private-111827)](#alcance)
+[![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet)](https://dotnet.microsoft.com/) [![EF Core](https://img.shields.io/badge/EF_Core-10-512BD4)](https://learn.microsoft.com/ef/core/) [![React 19](https://img.shields.io/badge/React-19-149ECA?logo=react)](https://react.dev/) [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-4169E1?logo=postgresql)](https://www.postgresql.org/)
 
-DiwyLearn permite que una misma cuenta aprenda, cree y gestione cursos. Conecta un Course Studio modular con una experiencia de estudiante que conserva progreso, borradores y entregas.
+DiwyLearn lets one account learn, create, and manage courses. A modular Course Studio connects to a student player that persists progress, drafts, submissions, and review evidence.
 
-> Este repositorio contiene documentación, arquitectura, ejemplos y componentes públicos. El código principal permanece privado porque el producto continúa en desarrollo.
+> This case study documents a private product. Public samples are independently written and contain no student data, proprietary course content, or production configuration.
 
-## Problema y enfoque
+## The problem
 
-Muchas plataformas separan artificialmente estudiante y creador o reducen el aprendizaje a contenido pasivo. DiwyLearn modela cursos y bloques interactivos, aplica permisos por rol/propiedad y hace trazable el ciclo creación → aprendizaje → revisión.
+Many learning platforms separate learners from creators and reduce progress to page completion. DiwyLearn models course structure and interactive blocks while enforcing role, ownership, publication, and enrollment rules on the server.
 
-## Mi responsabilidad
+## My role
 
-Desarrollo full-stack: producto, API .NET, contratos HTTP, EF Core, autenticación/roles, Course Studio, experiencia React y endurecimiento de seguridad.
+I built the product end to end: product flows, ASP.NET Core API, Identity/JWT, EF Core model and migrations, course authorization, React Course Studio/player, data hardening, and performance-oriented SQL projections.
 
-## Capacidades demostradas
+## Engineering highlights
 
-- Identity y JWT Bearer con roles `Student`, `Creator` y `Admin`.
-- Autorización por rol y ownership de curso.
-- Vertical slices, DTO explícitos y errores uniformes.
-- EF Core + PostgreSQL con 10 migraciones principales.
-- Sanitización server-side, sandbox de embeds y rate limiting.
-- Proyecciones SQL para catálogos y progreso real.
-- React 19, TipTap, dnd-kit e i18n en cinco idiomas.
+- ASP.NET Core Identity and JWT Bearer authentication.
+- Roles: `Student`, `Creator`, and `Admin`.
+- Ownership authorization for draft editing and submission review.
+- Vertical slices with explicit Request/Response contracts.
+- EF Core + PostgreSQL with ten primary migrations.
+- Server-side rich-text sanitization and sandboxed embeds.
+- Rate limits for authentication, AI generation, and access-code redemption.
+- SQL projections for catalogs and progress instead of loading full graphs.
+- Shared React learning-block renderers for creator preview and student player.
 
-## Arquitectura
+## Architecture
 
 ```mermaid
 flowchart LR
-  UI["React · Studio / Player"] --> API["ASP.NET Core"]
-  API --> Auth["Identity · JWT · roles"]
-  API --> Features["Courses · Enrollments · Learning · AI"]
-  Features --> DB["EF Core · PostgreSQL"]
+  UI["React · Studio / Player"] --> API["ASP.NET Core MVC API"]
+  API --> Auth["Identity · JWT · policies"]
+  API --> Features["Courses · Enrollment · Learning · AI"]
+  Features --> EF["EF Core"]
+  EF --> DB["PostgreSQL"]
 ```
 
-Lee [arquitectura](./docs/architecture.md), [decisiones](./docs/decisions.md) y [roadmap](./docs/roadmap.md).
+Read [architecture](./docs/architecture.md), [decisions](./docs/decisions.md), and [engineering evidence](./docs/engineering-evidence.md).
 
-## Muestra pública
+## Public code samples
 
-`CourseAccessPolicy` separa rol, propiedad, publicación e inscripción y devuelve un motivo estable para auditoría o UI.
+| Sample | Demonstrates |
+| --- | --- |
+| `CourseAccessPolicy` | Role + ownership + publication rules |
+| `CourseCatalogQuery` | EF Core projection, no-tracking reads, pagination |
+| `CoursesController` | Thin MVC controller and explicit HTTP results |
+| xUnit tests | Authorization and query behavior |
 
 ```bash
 dotnet test tests/DiwyLearn.PublicSample.Tests.csproj
 ```
 
-Consulta el [código](./sample-code/CourseAccessPolicy.cs), las [pruebas](./tests/CourseAccessPolicyTests.cs) y [OpenAPI](./api/openapi.yaml).
+## Verified engineering evidence
 
-## Demo
+- Course progress is calculated from persisted data and projected by the server.
+- Long activities distinguish pending, saved draft, and submitted states.
+- Creator review summarizes learners, completion, and recent submissions.
+- Shared block rendering reduces drift between author preview and learner view.
 
-La demo pública se habilitará con catálogo y cuentas sintéticas; no se exponen cursos, estudiantes ni credenciales reales.
+## Challenges addressed
 
-## Evidencia verificable
+1. Keeping creator preview and student rendering consistent.
+2. Preserving partial answers without presenting drafts as submissions.
+3. Avoiding client-only authorization and client-invented progress.
+4. Sanitizing creator/AI content before persistence.
+5. Querying course summaries without loading complete content trees.
 
-- Progreso de inscripciones calculado en SQL.
-- Bloques compartidos entre preview y player.
-- Actividades con estados pendiente, borrador y entrega.
-- Dashboard de creador con avance y entregas recientes.
+## Boundaries and demo
 
-No se publican cifras de usuarios o ingresos sin una fuente verificable. Las capturas usarán datos sintéticos.
+The private repository contains product source, data migrations, and course content. This repository contains only sanitized documentation, samples, and tests. A demo will use synthetic courses and accounts.
 
-## Alcance
+## License
 
-| Público | Privado |
-| --- | --- |
-| Arquitectura y decisiones | Código productivo completo |
-| OpenAPI reducido | Datos, secretos y configuración |
-| Política C# y pruebas | Contenido real y telemetría |
-
-## Seguridad y licencia
-
-Consulta [SECURITY.md](./SECURITY.md). MIT cubre solo este repositorio público.
+MIT applies only to this public sample.

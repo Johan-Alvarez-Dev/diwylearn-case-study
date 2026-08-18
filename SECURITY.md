@@ -1,5 +1,11 @@
-# Política de seguridad
+# Security Policy
 
-Este repositorio es una muestra y no contiene el sistema productivo. No publiques secretos, datos personales ni detalles explotables en un issue.
+This repository contains a deliberately isolated public sample, not the production system.
 
-Usa el reporte privado de vulnerabilidades de GitHub cuando esté habilitado. Incluye impacto, reproducción mínima sobre la muestra y mitigación sugerida. Este repositorio no autoriza pruebas contra servicios, cuentas o datos reales.
+## Reporting
+
+Use GitHub private vulnerability reporting when available. Do not include credentials, personal data, or exploitable production details in a public issue. Include the affected sample, impact, minimal reproduction, and a suggested mitigation when possible.
+
+## Scope
+
+Testing this repository locally is allowed. Testing production services, accounts, providers, infrastructure, or customer data is not authorized.

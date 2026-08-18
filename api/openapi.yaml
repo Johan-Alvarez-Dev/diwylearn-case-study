@@ -1,11 +1,11 @@
 openapi: 3.1.0
 info:
-  title: DiwyLearn Public Contract
+  title: DiwyLearn Public API Contract
   version: 1.0.0
-  description: Extracto ilustrativo; omite rutas productivas.
+  description: A reduced illustrative contract that omits production routes and schemas.
 paths:
   /api/public/courses:
     get:
-      summary: Lista cursos publicados
+      summary: List published course summaries
       responses:
-        '200': { description: Resumen paginado }
+        '200': { description: Paginated course summaries }

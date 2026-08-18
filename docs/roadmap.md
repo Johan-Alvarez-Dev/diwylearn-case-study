@@ -1,8 +1,8 @@
-# Roadmap público
+# Public Roadmap
 
-- Calificación y gating verificados en servidor.
-- Modelo explícito de intentos, entregas y feedback.
-- Contratos JSON versionados para bloques.
-- Suite automatizada y CI.
-- Refresh tokens rotatorios.
-- Medios, certificados y monetización después de integridad y seguridad.
+- Move all evaluation and lesson gating verification to the server.
+- Introduce explicit attempt, submission, and feedback entities.
+- Version interactive-block JSON contracts.
+- Expand automated tests and CI.
+- Add refresh-token rotation and production recovery flows.
+- Add media, certificates, and monetization only after integrity work.

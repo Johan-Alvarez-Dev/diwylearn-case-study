@@ -1,21 +1,21 @@
-# Decisiones técnicas públicas
+# Technical Decisions
 
-## Una cuenta, varios roles
+## One account, multiple roles
 
-Una cuenta puede aprender y crear. Evita perfiles duplicados, a cambio de autorización combinada.
+A user may learn and create. This avoids duplicate profiles but requires combined role/ownership policies.
 
-## Vertical slices sin ceremonia prematura
+## Vertical slices without premature ceremony
 
-Contratos y servicios viven junto a su feature. Mejora ownership; exige extraer responsabilidades al crecer.
+Contracts and services live with their feature. This keeps ownership clear without introducing a mediator merely for structure.
 
-## El servidor es la fuente del progreso
+## Server-owned progress
 
-Porcentajes y conteos vienen de datos persistidos, no de barras ficticias.
+Progress and counts come from persisted facts and SQL projections, not hard-coded UI values.
 
-## IA con revisión antes de aplicar
+## AI proposes, creators approve
 
-La IA propone estructura y el creador confirma antes de persistir.
+Generated course structure is reviewed before persistence, preserving editorial control.
 
-## Seguridad antes de expansión
+## Security before feature expansion
 
-Sanitización, límites, sesión y consultas eficientes tienen prioridad sobre nuevas funciones.
+Sanitization, rate limiting, session behavior, and efficient reads are prioritized before additional commercial modules.
