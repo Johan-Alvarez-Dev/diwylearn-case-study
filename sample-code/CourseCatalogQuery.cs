@@ -30,7 +30,8 @@ public sealed class LearningDbContext(DbContextOptions<LearningDbContext> option
         {
             entity.HasKey(x => x.Id);
             entity.HasIndex(x => x.Slug).IsUnique();
-            entity.Property(x => x.Title).HasMaxLength(160);
+            entity.Property(x => x.Title).HasMaxLength(160).IsRequired();
+            entity.Property(x => x.Slug).HasMaxLength(120).IsRequired();
             entity.HasMany(x => x.Enrollments).WithOne().HasForeignKey(x => x.CourseId);
         });
         modelBuilder.Entity<PublicEnrollment>().HasKey(x => x.Id);
