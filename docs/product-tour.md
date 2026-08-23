@@ -2,6 +2,16 @@
 
 These captures use synthetic courses and demo accounts. Theme-aware views switch automatically where both light and dark variants are available.
 
+## Quick walkthrough
+
+The silent preview follows the creator dashboard, learning access flow, course library, and structured Course Studio.
+
+<p align="center">
+  <a href="../media/diwylearn-walkthrough.gif">
+    <img src="../media/diwylearn-walkthrough.gif" alt="DiwyLearn course creation and learning workspace walkthrough" width="640">
+  </a>
+</p>
+
 ## Course Studio
 
 Creators manage published courses and drafts from a focused studio rather than mixing authoring controls into the learner experience.

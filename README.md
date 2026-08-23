@@ -120,9 +120,15 @@ The production product remains private because it is actively developed. This pu
 
 ## Video walkthrough
 
-> **Coming soon.** A guided tour of course creation, the learner player, progress persistence, and creator review is being recorded.
+The 9-second preview follows the creator dashboard, learning access flow, course library, and structured Course Studio. Authentication is excluded so no account details or credentials are exposed.
 
-The repository reserves the [media area](./media/README.md) for the final video or optimized GIF. Until then, the complete visual flow is available in the [product tour](./docs/product-tour.md).
+<p align="center">
+  <a href="./media/diwylearn-walkthrough.gif">
+    <img src="./media/diwylearn-walkthrough.gif" alt="DiwyLearn course creation and learning workspace walkthrough" width="640">
+  </a>
+</p>
+
+Open the animation at full size or review the [annotated product tour](./docs/product-tour.md).
 
 ## License
 

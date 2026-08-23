@@ -1,11 +1,11 @@
-# DiwyLearn video walkthrough
+# DiwyLearn walkthrough assets
 
-This directory is reserved for the public product walkthrough currently in production.
+## Published
 
-Recommended deliverables:
+- [`diwylearn-walkthrough.gif`](./diwylearn-walkthrough.gif) — optimized silent preview used by the main README and product tour.
 
-- `diwylearn-walkthrough.mp4` — 60–120 second narrated product tour.
-- `diwylearn-walkthrough.gif` — short silent preview optimized for the main README.
-- `diwylearn-walkthrough-cover.webp` — accessible poster image linked to the full video.
+The preview starts after authentication and uses synthetic courses and demo accounts. Emails, learner identifiers, submissions, private course content, and production URLs are excluded.
 
-Use synthetic courses and accounts only. Remove emails, learner identifiers, submissions, private course content, and production URLs before publishing.
+## Optional next asset
+
+A future `diwylearn-walkthrough.mp4` can provide a 60–120 second narrated tour. Keep the GIF as the fast recruiter preview and link the longer video rather than embedding it directly.
