@@ -9,7 +9,7 @@ DiwyLearn lets one account learn, create, and manage courses. A modular Course S
 
 > This case study documents a private product. The runnable API in this repository is independently written and contains no student data, proprietary course content, or production configuration.
 
-[Product tour](./docs/product-tour.md) · [Run the sample](#run-the-public-sample) · [Review the code](#what-you-can-evaluate) · [Architecture](./docs/architecture.md) · [API contract](./api/openapi.yaml) · [Video](#video-walkthrough)
+[Open the live demo](https://learn.diwy.online/demo) · [Product documentation](https://guide.diwy.online/) · [Product tour](./docs/product-tour.md) · [Run the sample](#run-the-public-sample) · [Review the code](#what-you-can-evaluate) · [Architecture](./docs/architecture.md) · [API contract](./api/openapi.yaml) · [Video](#video-walkthrough)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./screenshots/diwylearn-studio-900.webp 900w, ./screenshots/diwylearn-studio-1600.webp 1600w">
@@ -117,6 +117,10 @@ The public sample replaces PostgreSQL with SQLite to keep review friction low; t
 | Reduced OpenAPI contract and architecture | Complete schemas and operational endpoints |
 
 The production product remains private because it is actively developed. This public case study is intentionally executable so reviewers can evaluate the engineering practices directly.
+
+## Live product
+
+[Open the DiwyLearn demo](https://learn.diwy.online/demo) or follow the [product documentation](https://guide.diwy.online/). The demo provides the complete user experience while this repository keeps the architecture and representative implementation independently reviewable.
 
 ## Video walkthrough
 

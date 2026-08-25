@@ -1,6 +1,6 @@
 # DiwyLearn product tour
 
-These captures use synthetic courses and demo accounts. Theme-aware views switch automatically where both light and dark variants are available.
+These captures use synthetic courses and demo accounts. Theme-aware views switch automatically where both light and dark variants are available. Open the [live demo](https://learn.diwy.online/demo) or use the [product documentation](https://guide.diwy.online/) for a guided experience.
 
 ## Quick walkthrough
 
